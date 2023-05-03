@@ -1,0 +1,62 @@
+@import "variables"
+
+$bgcolor: #fae3a2
+$blockWidth: 200px
+$blockHeight: 200px
+$blockBorder: 3px dashed red
+
+@mixin font($size, $weight, $color)
+    font-family: Arial, Helvetica, sans-serif
+    font-weight: $weight
+    font-size: $size
+    color: $color
+
+
+* 
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+.block:first-child
+    width: $blockWidth
+    height: $blockHeight
+    margin-bottom: 10px
+
+    border: $blockBorder
+
+    background-color: blue
+    
+.block:not(.first)
+    width: 200px
+    height: $blockHeight
+    margin-bottom: 10px
+
+    border: 1px solid black
+
+    background-color: $bgcolor
+
+#central_block
+    background-color: grey
+    border: $blockBorder
+
+    ul
+        width: 180px
+        height: inherit
+        background-color: green
+        list-style: none
+
+        li
+            float: left
+            margin-right: 10px
+            @include font(18px, 700, yellow)
+
+            &:hover
+                background-color: #fff
+
+body
+    background: linear-gradient(270deg, red 0%, orange 100%)
+
+
+
+
+
